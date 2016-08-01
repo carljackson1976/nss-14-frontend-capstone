@@ -1,0 +1,16 @@
+<nav ng-controller="navCtrl">
+  <div class="nav-wrapper  cyan darken-4">
+          <a class="brand-logo"><i class="material-icons left">chat_bubble_outline</i>Say Something Special...</a>
+
+        <ul id="nav-mobile" class="right">
+          <li>
+            <a ng-href="#/select"><i class="material-icons left">view_module</i>Card Types</a></li>
+          <li>
+            <a ng-href="#/input"><i class="material-icons left">mode_edit</i>Personalize</a></li>
+          <li ng-show="userIsLoggedIn">
+            <a ng-href="#/logout"><i class="material-icons left">perm_identity</i>Logout</a></li>
+          <li>
+            <a ng-href="#/login"><i class="material-icons left">perm_identity</i>Login</a></li>
+        </ul>
+  </div>
+</nav>
