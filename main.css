@@ -1,3 +1,11 @@
-html {
-    font-family: ChunkFive, Calibri, Trebuchet, sans-serif;
-  }
+body {
+	background: url(http://upload.wikimedia.org/wikipedia/commons/e/ee/Greetingcardsretaildisplay.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card-title {
+	text-align: center;
+}
