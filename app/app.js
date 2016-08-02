@@ -34,8 +34,16 @@ app.config(function($routeProvider) {
      templateUrl: 'partials/loginRegister.html',
      controller: 'loginCtrl'
    })
+   .when('/holiday', {
+     templateUrl: 'partials/inputGreetingCard.html',
+     controller: 'inputGreetingCardCtrl'
+     })
    .when('/beesknees', {
      templateUrl: 'partials/inputGreetingCard.html',
      controller: 'inputGreetingCardCtrl'
+     })
+   .when('/birthday', {
+     templateUrl: 'partials/inputGreetingCard.html',
+     controller: 'inputGreetingCardCtrl'
    });
-});
+ });
