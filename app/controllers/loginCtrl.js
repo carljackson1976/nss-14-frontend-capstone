@@ -14,6 +14,7 @@ app.controller("loginCtrl", function($scope, $location, $rootScope, AuthFactory)
 
       AuthFactory.authWithProvider().then(function(){
         $rootScope.userIsLoggedIn = true;
+      console.log("register");
       });
     }
     if ($location.path() === "/login"){
@@ -21,9 +22,9 @@ app.controller("loginCtrl", function($scope, $location, $rootScope, AuthFactory)
       $rootScope.userIsLoggedIn = true;
     }
 
-    if ($location.path() === "/logout"){
-      AuthFactory.logout();
-      $rootScope.userIsLoggedIn = false;
-    }
+    // if ($location.path() === "/logout"){
+    //   AuthFactory.logout();
+    //   $rootScope.userIsLoggedIn = false;
+    // }
 
 });

@@ -1,13 +1,13 @@
 var app = angular.module("MadLibs", ["ngRoute"])
-  .constant("firebaseURL", "https://madlib-demo.firebaseio.com/");
+  .constant("firebaseURL", "https://nss-capstone-front-end.firebaseio.com/");
 
 app.config(function($routeProvider) {
-  let authConfig = {
-    apiKey: "AIzaSyCOOGMthG0zFso2EchsmuqJ0ZTSqx7sV_4",
-    authDomain: "madlib-demo.firebaseapp.com"
-  }
+  // let authConfig = {
+  //   apiKey: "AIzaSyCOOGMthG0zFso2EchsmuqJ0ZTSqx7sV_4",
+  //   authDomain: "madlib-demo.firebaseapp.com"
+  // }
 
-  firebase.initializeApp(authConfig);
+  // firebase.initializeApp(authConfig);
 
   $routeProvider.
    when('/select', {
