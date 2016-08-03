@@ -1,5 +1,5 @@
 app.controller("loginCtrl", function($scope, $location, $rootScope, AuthFactory){
-    $rootScope.userIsLoggedIn = true;
+    $rootScope.userIsLoggedIn = false;
     $scope.registerMode = true;
 
     $scope.switchToRegisterMode = function() {
@@ -16,9 +16,14 @@ app.controller("loginCtrl", function($scope, $location, $rootScope, AuthFactory)
         $rootScope.userIsLoggedIn = true;
       });
     }
+    if ($location.path() === "/login"){
+      AuthFactory.logout();
+      $rootScope.userIsLoggedIn = true;
+    }
 
     if ($location.path() === "/logout"){
       AuthFactory.logout();
       $rootScope.userIsLoggedIn = false;
     }
+
 });
