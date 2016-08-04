@@ -13,13 +13,13 @@ app.controller("inputGreetingCardCtrl", function($scope, $location, cardFactory)
     $scope.storyNotDone = true;
 
     $scope.completeStory = function() {
-      // $scope.storyNotDone = false;
-      // $scope.completeMadLib();
+      $scope.storyNotDone = false;
+      $scope.completeMadLib();
       let data = {text: $scope.cardText, uid: uid};
       cardFactory.createCard(data)
-      // .then(function(finCard){
-      //   console.log(finCard);
-      // })
+      .then(function(finCard){
+        console.log(finCard);
+      })
     }
 
     $scope.doingThisMadlib = 0;
