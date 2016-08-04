@@ -26,3 +26,6 @@
 //     }
 
 // });
+
+    let uid = firebase.auth().currentUser.uid;
+    console.log(uid);

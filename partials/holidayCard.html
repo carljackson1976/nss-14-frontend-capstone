@@ -6,17 +6,19 @@
               <span class="card-title">HAPPY HOLIDAYS!</span>
             </div>
             <div class="card-content">
-              <p>Hoping your Holiday Season is as great as you are!<br>With Love,</p>
+              <!-- <p ng-hide="cardName">Hoping your Holiday Season is as great as you are!<br>With Love,</p> -->
+              <p>Hoping your Holiday Season is as great as you are!<br>With Love, {{cardName}}</p>
                <div class="row">
                 <form class="col s12">
                  <div class="row">
-                  <div class="input-field col s6">
-                  <input id="first_name" type="text" class="validate">
+                  <div ng-hide="hideElements" class="input-field col s6">
+                  <input id="first_name" type="text" class="validate" ng-model="cardName">
                   <label for="first_name">Name</label>
                </div>
             </div>
-            <div class="card-action">
-              <a href="holiday.html">CLICK ME FOR YOUR CARD</a>
+            <div ng-hide="hideElements" class="card-action">
+              <!-- <a href="#" ng-click="cardCreated()">CLICK ME FOR YOUR CARD</a> -->
+              <a ng-click="cardCreated()">CLICK ME FOR YOUR CARD</a>
             </div>
           </div>
         </div>

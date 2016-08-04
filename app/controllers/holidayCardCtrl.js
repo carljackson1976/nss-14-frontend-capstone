@@ -1,4 +1,26 @@
-// app.controller("holidayCardCtrl", function($scope, $location){
+app.controller("holidayCardCtrl", function($scope, $location, $http, firebaseURL){
+
+	$scope.cardName = null;
+	$scope.hideElements = false;
+
+
+	$scope.cardCreated = function() {
+
+		$scope.hideElements = true;
+
+		let cardObj = {name: $scope.cardName}
+		cardObj = JSON.stringify(cardObj);
+		let queryString = `${firebaseURL}/cards.json?`;
+		$http.post(queryString, cardObj)
+		.success(function(id) {
+			console.log("Your card was put at id", id);
+		});
+
+	}
+
+
+
+});
 //   $(document).ready(function(){
 //       $('.collapsible').collapsible({
 //         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
@@ -26,3 +48,6 @@
 //     }
 
 // });
+
+    // let uid = firebase.auth().currentUser.uid;
+    // console.log(uid);

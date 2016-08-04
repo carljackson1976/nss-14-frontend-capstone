@@ -12,6 +12,12 @@ app.controller("inputGreetingCardCtrl", function($scope, $location, cardFactory)
 
     $scope.storyNotDone = true;
 
+
+    $scope.$watch('fileInput', function() {
+      console.log($scope.fileInput);
+    });
+
+
     $scope.completeStory = function() {
       $scope.storyNotDone = false;
       $scope.completeMadLib();
