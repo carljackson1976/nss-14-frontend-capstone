@@ -6,17 +6,17 @@
               <span class="card-title">HAPPY BIRTHDAY!</span>
             </div>
             <div class="card-content">
-              <p>I hope your birthday is as fun as this picture is lame!<br>Sincerely,</p>
+              <p>I hope your birthday is as fun as this picture is lame!<br>Sincerely,<br>{{cardName}}</p>
                <div class="row">
                 <form class="col s12">
                  <div class="row">
-                  <div class="input-field col s6">
-                  <input id="first_name" type="text" class="validate">
+                  <div ng-hide="hideElements" class="input-field col s6">
+                  <input id="first_name" type="text" class="validate" ng-model="cardName">
                   <label for="first_name">Name</label>
                </div>
             </div>
-            <div class="card-action" href="">
-              <a href="">CLICK ME FOR YOUR CARD</a>
+            <div ng-hide="hideElements" class="card-action" href="">
+              <a ng-click="cardCreated()">CLICK ME FOR YOUR CARD</a>
             </div>
           </div>
         </div>
