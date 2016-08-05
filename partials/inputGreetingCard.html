@@ -10,7 +10,7 @@
          <input type="file" ng-model="fileInput">
         </div>
         <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
+        <input class="file-path validate" type="text" ng-model="showImage">
         </div>
         </div>
   </form>
@@ -19,7 +19,7 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12;">
-          <textarea id="textarea1" class="materialize-textarea" ng-model="cardText"></textarea>
+          <textarea id="textarea1" class="materialize-textarea" ng-model="cardText">{{cardName}}</textarea>
           <label for="textarea1">Input message below:</label>
         </div>
       </div>
@@ -71,7 +71,7 @@
  -->
       <!--  -->
   </form>
-  <div class="row"><div class="center-align"><button class="btn waves-effect waves-light" href="outputGreetingCard.html" ng-click="completeStory()">Submit<!-- <i class="material-icons right">send</i> --></button></div></div>
+  <div class="row"><div class="center-align" ng-hide="hideElements"><button class="btn waves-effect waves-light" href="outputGreetingCard.html" ng-click="cardCreated()">Submit<!-- <i class="material-icons right">send</i> --></button></div></div>
 </div>
 
 <!-- <div class="container" ng-hide="storyNotDone">
