@@ -1,5 +1,6 @@
 app.controller("birthdayCardCtrl", function($scope, $location, $http, firebaseURL){
 
+	// $scope.fileInput = null;
 	$scope.cardName = null;
 	$scope.hideElements = false;
 

@@ -38,9 +38,13 @@ app.config(function($routeProvider) {
      templateUrl: 'partials/holidayCard.html',
      controller: 'holidayCardCtrl'
      })
-   .when('/beesknees', {
+   .when('/custom', {
      templateUrl: 'partials/inputGreetingCard.html',
      controller: 'inputGreetingCardCtrl'
+     })
+   .when('/yourcard', {
+     templateUrl: 'partials/outputGreetingCard.html',
+     controller: 'outputGreetingCardCtrl'
      })
    .when('/birthday', {
      templateUrl: 'partials/birthdayCard.html',
