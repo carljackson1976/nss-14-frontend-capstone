@@ -53,5 +53,5 @@ app.controller("birthdayCardCtrl", function($scope, $location, $http, firebaseUR
 
 // });
 
-    let uid = firebase.auth().currentUser.uid;
-    console.log(uid);
+    // let uid = firebase.auth().currentUser.uid;
+    // console.log(uid);

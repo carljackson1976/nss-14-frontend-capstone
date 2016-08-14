@@ -49,5 +49,5 @@ app.config(function($routeProvider) {
    .when('/birthday', {
      templateUrl: 'partials/birthdayCard.html',
      controller: 'birthdayCardCtrl'
-   });
+   })
  });

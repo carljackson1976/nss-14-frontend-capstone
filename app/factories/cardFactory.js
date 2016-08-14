@@ -8,5 +8,16 @@ app.factory("cardFactory", function(firebaseURL, $q, $http){
 			})
 		})
 	}
-	return {createCard};
+	const getPicsFromFirebase = () => {
+    return $q((resolve, reject) => {
+      $http.get(`${firebaseURL}/cardimages.json`)
+        .success((dataObject) => {
+          resolve(dataObject);
+        })
+        .error((error) => {
+          reject(error);
+        });
+    });
+  };
+	return {createCard, getPicsFromFirebase};
 })
