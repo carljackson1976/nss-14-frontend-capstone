@@ -19,5 +19,40 @@ app.factory("cardFactory", function(firebaseURL, $q, $http){
         });
     });
   };
-	return {createCard, getPicsFromFirebase};
+
+ let getCard = function(uid) {
+    let cards = [];
+    return $q(function(resolve, reject) {
+      $http.get(`${firebaseURL}/cards.json?orderBy="uid"&equalTo="${uid}"`)
+        .success(function(oweskiObject) {
+          let oweskiCollection = oweskiObject;
+          Object.keys(oweskiCollection).forEach(function(key) {
+            oweskiCollection[key].id = key;
+            cards.push(oweskiCollection[key]);
+          });
+          resolve(cards);
+        })
+        .error(function(error) {
+          reject(error);
+        });
+    });
+  };
+
+  let deleteCard = function(id) {
+    return $q(function(resolve, reject) {
+      $http.delete(`${firebaseURL}/cards/${id}.json`)
+        .success(function(resolveObject) {
+ //          let oweskiCollection = oweskiObject;
+ //          Object.keys(oweskiCollection).forEach(function(key) {
+ //            oweskiCollection[key].id = key;
+ //            cards.push(oweskiCollection[key]);
+ //          });
+          resolve(resolveObject);
+        })
+        .error(function(error) {
+          reject(error);
+        });
+    });
+  };
+	return {createCard, getPicsFromFirebase, getCard, deleteCard};
 })

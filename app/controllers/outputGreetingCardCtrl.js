@@ -1,22 +1,20 @@
-app.controller("outputGreetingCardCtrl", function($scope, $location, $http, firebaseURL){
+app.controller("outputGreetingCardCtrl", function($scope, $location, $http, firebaseURL, cardFactory, AuthFactory, $route){
+	$scope.userCards = null;
 
-	$scope.fileInput = null;
-	// $scope.cardName = null;
-	$scope.hideElements = false;
+    let userID = AuthFactory.getUser();
 
 
-	$scope.cardCreated = function() {
+	cardFactory.getCard(userID).
+	then(function(result){
+		console.log(result);
+		$scope.userCards = result;
+	})
 
-		$scope.hideElements = true;
-        let uid = currentUser.uid;
-		let cardObj = {name: $scope.fileInput}
-		cardObj = JSON.stringify(cardObj);
-		let queryString = `${firebaseURL}/cards.json?`;
-		$http.post(queryString, cardObj)
-		.success(function(id) {
-			console.log("Your card was put at id", id);
-		});
-
+	$scope.deleteCard = function(id){
+        cardFactory.deleteCard(id).
+        then(function(result){
+        	$route.reload();
+        })
 	}
 
 

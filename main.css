@@ -14,3 +14,20 @@ label {
 .input-field input[type=text]:focus + label {
 	color: black;
 }
+
+.loginForm {
+	background-color: #006064;
+}
+
+.loginWords{
+	color: white;
+	font-family: futura;
+}
+
+.emailField{
+    background-color: white;
+}
+
+.passwordField {
+    background-color: white;
+}

@@ -10,15 +10,17 @@
   </div>
 
   <!-- ============= REGISTRATION FORM ============= -->
-  <form class="col s8 offset-s2" ng-show="registerMode">
+  <form class="col s8 offset-s2 loginForm" ng-show="registerMode">
     <div class="row">
       <div class="input-field col s12">
-        <input id="email" type="email" class="validate" ng-model="email">
-        <label for="email">Email</label>
+        <p class="loginWords">email</p>
+        <input id="email emailField" type="email" class="validate" ng-model="email">
+        <label for="email"></label>
       </div>
       <div class="input-field col s12">
-        <input id="password" type="password" class="validate" ng-model="password">
-        <label for="password">Password</label>
+      <p class="loginWords">password</p>
+        <input id="password passwordField" type="password" class="validate" ng-model="password">
+        <label for="password"></label>
       </div>
     </div>
 
@@ -26,15 +28,17 @@
   </form>
 
   <!-- ============= LOGIN FORM ============= -->
-  <form class="col s8 offset-s2" ng-show="!registerMode">
+  <form class="col s8 offset-s2 loginForm" ng-show="!registerMode">
     <div class="row">
       <div class="input-field col s12">
-        <input id="email" type="email" class="validate" ng-model="email">
-        <label for="email">Email</label>
+      <p class="loginWords">email</p>
+        <input id="email emailField" type="email" class="validate" ng-model="email">
+        <label for="email"></label>
       </div>
       <div class="input-field col s12">
-        <input id="password" type="password" class="validate" ng-model="password">
-        <label for="password">Password</label>
+      <p class="loginWords">password</p>
+        <input id="password passwordField" type="password" class="validate" ng-model="password">
+        <label for="password"></label>
       </div>
     </div>
 
