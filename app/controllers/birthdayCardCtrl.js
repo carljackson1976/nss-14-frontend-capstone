@@ -1,4 +1,4 @@
-app.controller("birthdayCardCtrl", function($scope, $location, $http, firebaseURL){
+app.controller("birthdayCardCtrl", function($scope, $location, $http, firebaseURL, AuthFactory){
 
 	// $scope.fileInput = null;
 	$scope.cardName = null;
@@ -9,7 +9,8 @@ app.controller("birthdayCardCtrl", function($scope, $location, $http, firebaseUR
 
 		$scope.hideElements = true;
 
-		let cardObj = {name: $scope.cardName}
+		let cardObj = {name: $scope.cardName, uid:AuthFactory.getUser(), url:"img/bday.jpg", 
+		text:"I hope your birthday is as fun as this picture is lame! Sincerely,"}
 		cardObj = JSON.stringify(cardObj);
 		let queryString = `${firebaseURL}/cards.json?`;
 		$http.post(queryString, cardObj)

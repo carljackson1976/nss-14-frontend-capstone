@@ -20,7 +20,7 @@ app.factory("cardFactory", function(firebaseURL, $q, $http){
     });
   };
 
- let getCard = function(uid) {
+ let getCards = function(uid) {
     let cards = [];
     return $q(function(resolve, reject) {
       $http.get(`${firebaseURL}/cards.json?orderBy="uid"&equalTo="${uid}"`)
@@ -54,5 +54,35 @@ app.factory("cardFactory", function(firebaseURL, $q, $http){
         });
     });
   };
-	return {createCard, getPicsFromFirebase, getCard, deleteCard};
+
+ let getCard = function(id) {
+    return $q(function(resolve, reject) {
+      $http.get(`${firebaseURL}/cards/${id}.json`)
+        .success(function(resolveObject) {
+ //          let oweskiCollection = oweskiObject;
+ //          Object.keys(oweskiCollection).forEach(function(key) {
+ //            oweskiCollection[key].id = key;
+ //            cards.push(oweskiCollection[key]);
+ //          });
+          resolve(resolveObject);
+        })
+        .error(function(error) {
+          reject(error);
+        });
+    });
+  };
+
+ var updateItem = function(itemId, newItem){
+        // let user = authFactory.getUser();                        
+        return $q(function(resolve, reject) {
+            $http.put(`${firebaseURL}/cards/${itemId}.json`, newItem)
+            .success(
+                function(objectFromFirebase) {
+                    resolve(objectFromFirebase);
+                }
+            );
+        });
+    };
+	
+	return {createCard, getPicsFromFirebase, getCards, deleteCard, getCard, updateItem};
 })

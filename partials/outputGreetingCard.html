@@ -8,18 +8,38 @@
 </div> -->
 
  <div class="row">
-        <div class="col s12 m7" ng-repeat="card in userCards">
+        <div class="col s12 m7" ng-repeat="card in userCards" ng-show="editBool">
           <div class="card">
             <div class="card-image">
               <img ng-src="{{card.url}}">
               <span class="card-title"></span>
             </div>
             <div class="card-content">
-              <p>{{card.text}} / {{card.name}}</p>
+              <p>{{card.text}}</p>
+              <p>{{card.name}}</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="#"></a>
               <a class="waves-effect waves-light btn" ng-click="deleteCard(card.id)">DELETE</a>
+              <a href="#"></a>
+              <a class="waves-effect waves-light btn update" ng-click="updateCard(card.id)">UPDATE</a>
+            </div>
+          </div>
+          </div>
+          <div class="col s12 m7" ng-repeat="card in userCards" ng-show="!editBool">
+          <div class="card">
+            <div class="card-image">
+              <img ng-src="{{card.url}}">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+             <input id="first_name" type="text" class="validate" ng-model="formData.card_text">
+               <label for="first_name">MESSAGE</label>
+             <input id="first_name" type="text" class="validate" ng-model="formData.card_name">
+               <label for="first_name">NAME</label>  
+            </div>
+            <div class="card-action">
+              <a class="waves-effect waves-light btn" ng-click="saveCard(card.id, card.url)">SAVE</a>
             </div>
           </div>
         </div>

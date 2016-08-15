@@ -31,3 +31,7 @@ label {
 .passwordField {
     background-color: white;
 }
+
+.update {
+	float: right;
+}
