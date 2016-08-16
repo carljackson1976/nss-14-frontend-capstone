@@ -1,0 +1,37 @@
+body {
+	background: url(http://upload.wikimedia.org/wikipedia/commons/e/ee/Greetingcardsretaildisplay.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+label {
+	font-family: Futura;
+	font-color: white;
+}
+
+.input-field input[type=text]:focus + label {
+	color: black;
+}
+
+.loginForm {
+	background-color: #006064;
+}
+
+.loginWords{
+	color: white;
+	font-family: futura;
+}
+
+.emailField{
+    background-color: white;
+}
+
+.passwordField {
+    background-color: white;
+}
+
+.update {
+	float: right;
+}

@@ -1,0 +1,28 @@
+<div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/bday.jpg">
+              <span class="card-title">HAPPY BIRTHDAY!</span>
+            </div>
+            <div class="card-content">
+              <p>I hope your birthday is as fun as this picture is lame!<br>Sincerely,<br>{{cardName}}</p>
+               <div class="row">
+                <form class="col s12">
+                 <div class="row">
+                  <div ng-hide="hideElements" class="input-field col s6">
+                  <input id="first_name" type="text" class="validate" ng-model="cardName">
+                  <label for="first_name">Name</label>
+               </div>
+            </div>
+            <div ng-hide="hideElements" class="card-action" href="">
+              <a ng-click="cardCreated()">CLICK ME FOR YOUR CARD</a><br>
+          <!--   <div> 
+              <a class="waves-effect waves-light btn">SAVE</a>
+              <a class="waves-effect waves-light btn">DELETE</a>
+              <a class="waves-effect waves-light btn">EMAIL</a>
+            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>

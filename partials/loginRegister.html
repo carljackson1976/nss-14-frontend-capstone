@@ -1,0 +1,48 @@
+<div class="row">
+  <!-- ============= BUTTON TOGGLE ============= -->
+  <div class="row">
+    <div class="col s4 offset-s4">
+      <div class="row valign">
+        <div class="col s6"><a class="waves-effect waves-light btn" ng-click="switchToRegisterMode()">register</a></div>
+        <div class="col s6"><a class="waves-effect waves-light btn" ng-click="switchToLoginMode()" ng-href="#/select" >login</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============= REGISTRATION FORM ============= -->
+  <form class="col s8 offset-s2 loginForm" ng-show="registerMode">
+    <div class="row">
+      <div class="input-field col s12">
+        <p class="loginWords">email</p>
+        <input id="email emailField" type="email" class="validate" ng-model="email">
+        <label for="email"></label>
+      </div>
+      <div class="input-field col s12">
+      <p class="loginWords">password</p>
+        <input id="password passwordField" type="password" class="validate" ng-model="password">
+        <label for="password"></label>
+      </div>
+    </div>
+
+    <div class="row"><div class="center-align"><button class="btn waves-effect waves-light" ng-click="register()">Register<!-- <i class="material-icons right">send</i> --></button></div></div>
+  </form>
+
+  <!-- ============= LOGIN FORM ============= -->
+  <form class="col s8 offset-s2 loginForm" ng-show="!registerMode">
+    <div class="row">
+      <div class="input-field col s12">
+      <p class="loginWords">email</p>
+        <input id="email emailField" type="email" class="validate" ng-model="email">
+        <label for="email"></label>
+      </div>
+      <div class="input-field col s12">
+      <p class="loginWords">password</p>
+        <input id="password passwordField" type="password" class="validate" ng-model="password">
+        <label for="password"></label>
+      </div>
+    </div>
+
+    <div class="row"><div class="center-align"><button class="btn waves-effect waves-light" ng-click="login()">Login<!-- <i class="material-icons right">send</i> --></button></div></div>
+  </form>
+
+</div>
